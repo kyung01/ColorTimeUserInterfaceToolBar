@@ -1,14 +1,15 @@
 //
-//  CTOnOffMenu.m
+//  EditMenu.m
 //  ColorTimeUserInterfaceToolbar
 //
-//  Created by Kyung Chang on 5/15/19.
+//  Created by Kyung Chang on 5/17/19.
 //  Copyright © 2019 Kyung Chang. All rights reserved.
 //
 
-#import "CTOnOffMenu.h"
+#import "CTEditMenu.h"
 
-@implementation CTOnOffMenu
+@implementation CTEditMenu
+
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
@@ -38,8 +39,11 @@
 	[segmentedControl.widthAnchor constraintGreaterThanOrEqualToAnchor:self.widthAnchor multiplier:1].active = true;
 	[segmentedControl.heightAnchor constraintEqualToAnchor:self.heightAnchor multiplier:1 constant:-10].active = true;
 	
-	[segmentedControl insertSegmentWithTitle:@"On" atIndex:0 animated:true];
-	[segmentedControl insertSegmentWithTitle:@"Off" atIndex:1 animated:true];
+	[segmentedControl insertSegmentWithTitle:@"Reset" atIndex:0 animated:true];
+	[segmentedControl insertSegmentWithTitle:@"Undo" atIndex:1 animated:true];
+	[segmentedControl insertSegmentWithTitle:@"Redo" atIndex:2 animated:true];
+	[segmentedControl insertSegmentWithTitle:@"Copy" atIndex:3 animated:true];
+	[segmentedControl insertSegmentWithTitle:@"Paste" atIndex:4 animated:true];
 	
 	[self layoutIfNeeded];
 	if(segmentedControl.frame.size.width > self.frame.size.width)
@@ -52,12 +56,27 @@
 	switch (selectedSegment) {
 		case 0:
 			[[NSNotificationCenter defaultCenter]
-			 postNotificationName:@"OnSelectedNotification"
+			 postNotificationName:@"ResetSelectedNotification"
 			 object:sender];
 			break;
 		case 1:
 			[[NSNotificationCenter defaultCenter]
-			 postNotificationName:@"OffSelectedNotification"
+			 postNotificationName:@"UndoSelectedNotification"
+			 object:sender];
+			break;
+		case 2:
+			[[NSNotificationCenter defaultCenter]
+			 postNotificationName:@"RedoSelectedNotification"
+			 object:sender];
+			break;
+		case 3:
+			[[NSNotificationCenter defaultCenter]
+			 postNotificationName:@"CopySelectedNotification"
+			 object:sender];
+			break;
+		case 4:
+			[[NSNotificationCenter defaultCenter]
+			 postNotificationName:@"PasteSelectedNotification"
 			 object:sender];
 			break;
 			

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF2E29AC228F23E400AA2E50 /* CTEditMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2E29AB228F23E400AA2E50 /* CTEditMenu.m */; };
+		BF2E29AF228F243600AA2E50 /* CTPresetMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2E29AE228F243600AA2E50 /* CTPresetMenu.m */; };
+		BF2E29B2228F244F00AA2E50 /* CTSelectMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2E29B1228F244F00AA2E50 /* CTSelectMenu.m */; };
+		BF2E29B5228F2F8600AA2E50 /* CTColorTimeMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2E29B4228F2F8600AA2E50 /* CTColorTimeMenu.m */; };
 		BFDDE7AC228CDBC5002E97CF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDDE7AB228CDBC5002E97CF /* AppDelegate.m */; };
 		BFDDE7AF228CDBC5002E97CF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDDE7AE228CDBC5002E97CF /* ViewController.m */; };
 		BFDDE7B2228CDBC5002E97CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFDDE7B0228CDBC5002E97CF /* Main.storyboard */; };
@@ -18,6 +22,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BF2E29AA228F23E400AA2E50 /* CTEditMenu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTEditMenu.h; sourceTree = "<group>"; };
+		BF2E29AB228F23E400AA2E50 /* CTEditMenu.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTEditMenu.m; sourceTree = "<group>"; };
+		BF2E29AD228F243600AA2E50 /* CTPresetMenu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTPresetMenu.h; sourceTree = "<group>"; };
+		BF2E29AE228F243600AA2E50 /* CTPresetMenu.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTPresetMenu.m; sourceTree = "<group>"; };
+		BF2E29B0228F244F00AA2E50 /* CTSelectMenu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTSelectMenu.h; sourceTree = "<group>"; };
+		BF2E29B1228F244F00AA2E50 /* CTSelectMenu.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTSelectMenu.m; sourceTree = "<group>"; };
+		BF2E29B3228F2F8600AA2E50 /* CTColorTimeMenu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTColorTimeMenu.h; sourceTree = "<group>"; };
+		BF2E29B4228F2F8600AA2E50 /* CTColorTimeMenu.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTColorTimeMenu.m; sourceTree = "<group>"; };
 		BFDDE7A7228CDBC5002E97CF /* ColorTimeUserInterfaceToolbar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorTimeUserInterfaceToolbar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFDDE7AA228CDBC5002E97CF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BFDDE7AB228CDBC5002E97CF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -77,6 +89,14 @@
 				BFDDE7C1228CDC59002E97CF /* CTMainMenu.m */,
 				BFDDE7C3228CE3D9002E97CF /* CTOnOffMenu.h */,
 				BFDDE7C4228CE3D9002E97CF /* CTOnOffMenu.m */,
+				BF2E29B3228F2F8600AA2E50 /* CTColorTimeMenu.h */,
+				BF2E29B4228F2F8600AA2E50 /* CTColorTimeMenu.m */,
+				BF2E29B0228F244F00AA2E50 /* CTSelectMenu.h */,
+				BF2E29B1228F244F00AA2E50 /* CTSelectMenu.m */,
+				BF2E29AA228F23E400AA2E50 /* CTEditMenu.h */,
+				BF2E29AB228F23E400AA2E50 /* CTEditMenu.m */,
+				BF2E29AD228F243600AA2E50 /* CTPresetMenu.h */,
+				BF2E29AE228F243600AA2E50 /* CTPresetMenu.m */,
 			);
 			path = ColorTimeUserInterfaceToolbar;
 			sourceTree = "<group>";
@@ -155,7 +175,11 @@
 				BFDDE7C5228CE3D9002E97CF /* CTOnOffMenu.m in Sources */,
 				BFDDE7AF228CDBC5002E97CF /* ViewController.m in Sources */,
 				BFDDE7BA228CDBC5002E97CF /* main.m in Sources */,
+				BF2E29AC228F23E400AA2E50 /* CTEditMenu.m in Sources */,
+				BF2E29B5228F2F8600AA2E50 /* CTColorTimeMenu.m in Sources */,
+				BF2E29B2228F244F00AA2E50 /* CTSelectMenu.m in Sources */,
 				BFDDE7AC228CDBC5002E97CF /* AppDelegate.m in Sources */,
+				BF2E29AF228F243600AA2E50 /* CTPresetMenu.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

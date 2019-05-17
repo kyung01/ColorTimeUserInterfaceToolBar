@@ -1,14 +1,15 @@
 //
-//  CTOnOffMenu.m
+//  CTSelectMenu.m
 //  ColorTimeUserInterfaceToolbar
 //
-//  Created by Kyung Chang on 5/15/19.
+//  Created by Kyung Chang on 5/17/19.
 //  Copyright © 2019 Kyung Chang. All rights reserved.
 //
 
-#import "CTOnOffMenu.h"
+#import "CTSelectMenu.h"
 
-@implementation CTOnOffMenu
+@implementation CTSelectMenu
+
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
@@ -38,8 +39,12 @@
 	[segmentedControl.widthAnchor constraintGreaterThanOrEqualToAnchor:self.widthAnchor multiplier:1].active = true;
 	[segmentedControl.heightAnchor constraintEqualToAnchor:self.heightAnchor multiplier:1 constant:-10].active = true;
 	
-	[segmentedControl insertSegmentWithTitle:@"On" atIndex:0 animated:true];
-	[segmentedControl insertSegmentWithTitle:@"Off" atIndex:1 animated:true];
+	[segmentedControl insertSegmentWithTitle:@"Exit" atIndex:0 animated:true];
+	[segmentedControl insertSegmentWithTitle:@"All" atIndex:1 animated:true];
+	[segmentedControl insertSegmentWithTitle:@"Outside" atIndex:2 animated:true];
+	[segmentedControl insertSegmentWithTitle:@"Inside" atIndex:3 animated:true];
+	[segmentedControl insertSegmentWithTitle:@"Brush" atIndex:4 animated:true];
+	[segmentedControl insertSegmentWithTitle:@"View Invert" atIndex:5 animated:true];
 	
 	[self layoutIfNeeded];
 	if(segmentedControl.frame.size.width > self.frame.size.width)
@@ -52,12 +57,32 @@
 	switch (selectedSegment) {
 		case 0:
 			[[NSNotificationCenter defaultCenter]
-			 postNotificationName:@"OnSelectedNotification"
+			 postNotificationName:@"OnExitSelectedNotification"
 			 object:sender];
 			break;
 		case 1:
 			[[NSNotificationCenter defaultCenter]
-			 postNotificationName:@"OffSelectedNotification"
+			 postNotificationName:@"OnAllSelectedNotification"
+			 object:sender];
+			break;
+		case 2:
+			[[NSNotificationCenter defaultCenter]
+			 postNotificationName:@"OnOutsideSelectedNotification"
+			 object:sender];
+			break;
+		case 3:
+			[[NSNotificationCenter defaultCenter]
+			 postNotificationName:@"OnInsideSelectedNotification"
+			 object:sender];
+			break;
+		case 4:
+			[[NSNotificationCenter defaultCenter]
+			 postNotificationName:@"OnBrushSelectedNotification"
+			 object:sender];
+			break;
+		case 5:
+			[[NSNotificationCenter defaultCenter]
+			 postNotificationName:@"OnViewInvertSelectedNotification"
 			 object:sender];
 			break;
 			
