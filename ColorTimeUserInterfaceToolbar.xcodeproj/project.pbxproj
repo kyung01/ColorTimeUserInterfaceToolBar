@@ -89,14 +89,14 @@
 				BFDDE7C1228CDC59002E97CF /* CTMainMenu.m */,
 				BFDDE7C3228CE3D9002E97CF /* CTOnOffMenu.h */,
 				BFDDE7C4228CE3D9002E97CF /* CTOnOffMenu.m */,
-				BF2E29B3228F2F8600AA2E50 /* CTColorTimeMenu.h */,
-				BF2E29B4228F2F8600AA2E50 /* CTColorTimeMenu.m */,
-				BF2E29B0228F244F00AA2E50 /* CTSelectMenu.h */,
-				BF2E29B1228F244F00AA2E50 /* CTSelectMenu.m */,
 				BF2E29AA228F23E400AA2E50 /* CTEditMenu.h */,
 				BF2E29AB228F23E400AA2E50 /* CTEditMenu.m */,
+				BF2E29B3228F2F8600AA2E50 /* CTColorTimeMenu.h */,
+				BF2E29B4228F2F8600AA2E50 /* CTColorTimeMenu.m */,
 				BF2E29AD228F243600AA2E50 /* CTPresetMenu.h */,
 				BF2E29AE228F243600AA2E50 /* CTPresetMenu.m */,
+				BF2E29B0228F244F00AA2E50 /* CTSelectMenu.h */,
+				BF2E29B1228F244F00AA2E50 /* CTSelectMenu.m */,
 			);
 			path = ColorTimeUserInterfaceToolbar;
 			sourceTree = "<group>";

@@ -31,6 +31,7 @@
 
 -(void)initMe{
 	UISegmentedControl* segmentedControl = [UISegmentedControl new];
+	segmentedControl.momentary = true;
 	[segmentedControl addTarget:self action:@selector(onSegmentedControl:) forControlEvents:UIControlEventValueChanged ];
 	
 	segmentedControl.translatesAutoresizingMaskIntoConstraints = false;

@@ -10,6 +10,7 @@
 
 @implementation CTMainMenu{
 	
+	NSArray<UIBarButtonItem*> *buttons;
 }
 
 - (instancetype)initWithFrame:(CGRect)frame
@@ -30,8 +31,7 @@
 }
 
 -(void)initMe{
-	 
-	 NSArray *buttons = [NSArray arrayWithObjects:
+	 buttons = [NSArray arrayWithObjects:
 						 [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil],
 						 [[UIBarButtonItem alloc] initWithTitle:@"On" style:UIBarButtonItemStylePlain target:self action:@selector(onToolbar:)],
 						 [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil],
@@ -55,14 +55,13 @@
 	[nc addObserver:self selector:@selector(notifiactionReceivedSelect:) name:@"MainMenuSelectSelectedNotification" object:nil];
 }
 
--(void)notifiactionReceivedOn:(id)sender{
-	NSLog(@"Received On");
-	[self.onAndOffMenu setHidden:!self.onAndOffMenu.isHidden];
-	[self.editMenu setHidden:true];
-	[self.colorTimeMenu setHidden:true];
-	[self.presetMenu setHidden:true];
-	//[self.selectMenu setHidden:true];
-	[self repositionSelectMenuBasedOnMenuState];
+-(void)notifiactionReceivedOn:(UIBarButtonItem*)sender{
+//	[self.onAndOffMenu setHidden:!self.onAndOffMenu.isHidden];
+//	[self.editMenu setHidden:true];
+//	[self.colorTimeMenu setHidden:true];
+//	[self.presetMenu setHidden:true];
+//	//[self.selectMenu setHidden:true];
+//	[self repositionSelectMenuBasedOnMenuState];
 }
 
 -(void)notifiactionReceivedEdit:(id)sender{
@@ -126,8 +125,16 @@
 -(void)onToolbar:(UIBarButtonItem*) sender{
 	if([sender.title isEqualToString:@"On"])
 	{
+		sender.title = @"Off";
 		[[NSNotificationCenter defaultCenter]
 		 postNotificationName:@"MainMenuOnSelectedNotification"
+		 object:sender];
+	}
+	else if([sender.title isEqualToString:@"Off"])
+	{
+		sender.title = @"On";
+		[[NSNotificationCenter defaultCenter]
+		 postNotificationName:@"MainMenuOffSelectedNotification"
 		 object:sender];
 	}
 	else if([sender.title isEqualToString:@"Edit"]){

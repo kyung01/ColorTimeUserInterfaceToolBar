@@ -43,8 +43,7 @@
 	
 	[self layoutIfNeeded];
 	if(segmentedControl.frame.size.width > self.frame.size.width)
-		self.contentSize = CGSizeMake(segmentedControl.frame.size.width, 0);
-	
+		self.contentSize = CGSizeMake(segmentedControl.frame.size.width, 0);	
 }
 
 -(void)onSegmentedControl:(UISegmentedControl*) sender{
