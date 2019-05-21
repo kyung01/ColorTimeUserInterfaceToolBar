@@ -30,6 +30,7 @@
 }
 
 -(void)initMe{
+	
 	UISegmentedControl* segmentedControl = [UISegmentedControl new];
 	segmentedControl.momentary = true;
 	[segmentedControl addTarget:self action:@selector(onSegmentedControl:) forControlEvents:UIControlEventValueChanged ];
@@ -50,8 +51,8 @@
 	[segmentedControl insertSegmentWithTitle:@"Graphic" atIndex:7 animated:true];
 	
 	[self layoutIfNeeded];
-	if(segmentedControl.frame.size.width > self.frame.size.width)
-		self.contentSize = CGSizeMake(segmentedControl.frame.size.width, 0);
+	if(segmentedControl.frame.size.width> self.frame.size.width)
+		self.contentSize = CGSizeMake(segmentedControl.frame.size.width , 0);
 	
 }
 
