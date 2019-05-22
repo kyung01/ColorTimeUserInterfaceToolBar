@@ -69,6 +69,8 @@
 }
 
 -(void)initMe{
+	self.tintColor = UIColor.whiteColor;
+	self.backgroundColor = [UIColor colorWithWhite:0.1 alpha:1.0];
 	[[NSNotificationCenter defaultCenter] addObserver: self selector:   @selector(deviceOrientationDidChange:) name: UIDeviceOrientationDidChangeNotification object: nil];
 	[self initSegmentedControlWithIndentOf:[self getSegmnetedControlIndentFromEachSide]];
 	[self layoutIfNeeded];

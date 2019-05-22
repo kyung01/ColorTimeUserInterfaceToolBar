@@ -11,57 +11,6 @@
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9kl-Kx-zvH" customClass="CTMainMenu">
-                                <rect key="frame" x="0.0" y="818" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <items>
-                                    <barButtonItem title="Item" id="4by-Yg-2im"/>
-                                </items>
-                                <connections>
-                                    <outlet property="colorTimeMenu" destination="Y8k-eO-uER" id="GxK-wz-8Z9"/>
-                                    <outlet property="editMenu" destination="bgD-Kz-mfC" id="cxR-Rf-qlf"/>
-                                    <outlet property="onAndOffMenu" destination="MH0-yZ-jCU" id="S08-II-akt"/>
-                                    <outlet property="presetMenu" destination="fWJ-SF-8n0" id="wyn-BE-7Ud"/>
-                                    <outlet property="selectMenu" destination="b2X-FH-ZB7" id="QPJ-rg-eTP"/>
-                                </connections>
-                            </toolbar>
-                            <scrollView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MH0-yZ-jCU" customClass="CTOnOffMenu">
-                                <rect key="frame" x="0.0" y="776" width="414" height="42"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                            </scrollView>
-                            <scrollView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bgD-Kz-mfC" customClass="CTEditMenu">
-                                <rect key="frame" x="0.0" y="776" width="414" height="42"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                            </scrollView>
-                            <scrollView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y8k-eO-uER" customClass="CTColorTimeMenu">
-                                <rect key="frame" x="0.0" y="776" width="414" height="42"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                            </scrollView>
-                            <scrollView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fWJ-SF-8n0" customClass="CTPresetMenu">
-                                <rect key="frame" x="0.0" y="776" width="414" height="42"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                            </scrollView>
-                            <scrollView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b2X-FH-ZB7" customClass="CTSelectMenu">
-                                <rect key="frame" x="0.0" y="776" width="414" height="42"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                            </scrollView>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="uto-cL-4kq"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="146" y="-44"/>
-        </scene>
-        <!--View Controller-->
         <scene sceneID="3jq-d4-ztu">
             <objects>
                 <viewController id="Jgr-bn-FOn" sceneMemberID="viewController">
@@ -72,10 +21,9 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ls2-o3-ryt" customClass="CTUIWrapper">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="ePI-C4-x68"/>
                     </view>
                 </viewController>

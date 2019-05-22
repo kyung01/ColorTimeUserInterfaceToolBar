@@ -30,7 +30,8 @@
 }
 
 -(void)initMe{
-	
+	self.tintColor = UIColor.whiteColor;
+	self.backgroundColor = [UIColor colorWithWhite:0.1 alpha:1.0];
 	UISegmentedControl* segmentedControl = [UISegmentedControl new];
 	segmentedControl.momentary = true;
 	[segmentedControl addTarget:self action:@selector(onSegmentedControl:) forControlEvents:UIControlEventValueChanged ];
