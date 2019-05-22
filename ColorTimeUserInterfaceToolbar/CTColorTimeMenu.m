@@ -9,6 +9,7 @@
 #import "CTColorTimeMenu.h"
 
 @implementation CTColorTimeMenu{
+	UIDeviceOrientation previousOrientation;
 	UISegmentedControl *segmentedControl;
 	NSLayoutConstraint *segmentedControlLeadingConstraint;
 	NSLayoutConstraint *segmentedControlTrailingConstraint;
@@ -39,23 +40,43 @@
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-
+-(bool)isOrientation:(UIDeviceOrientation)orientaiton sameOrientationAs:(UIDeviceOrientation)otherOrientation{
+	
+	bool isOrientationLandscape = UIDeviceOrientationIsLandscape(orientaiton);
+	bool isOtherOrientationLandsapce = UIDeviceOrientationIsLandscape(otherOrientation);
+	return isOrientationLandscape == isOtherOrientationLandsapce;
+}
 - (void)deviceOrientationDidChange:(NSNotification *)notification {
+	
 	//Obtain current device orientation
-//	UIDeviceOrientation orientation = [[UIDevice currentDevice] orientation]; //use the orientation if needed
-	[self layoutSegmentedControl];
-	[self animateScrollViewForSelectedSegmentAtIndex:(int)segmentedControl.selectedSegmentIndex];
+	UIDeviceOrientation orientation = [[UIDevice currentDevice] orientation]; //use the orientation if needed
+	if(orientation == UIDeviceOrientationUnknown){
+		return;
+	}
+	if(! [self isOrientation:orientation sameOrientationAs:previousOrientation] ){
+		//new orientation detected
+		NSLog(@"deviceOrientationDidChange");
+		previousOrientation = orientation;
+		[self layoutSegmentedControl];
+		[self animateScrollViewForSegmentedControler];
+	}
+	//orientation
+	
+}
+
+-(float) getSegmnetedControlIndentFromEachSide{
+	return self.frame.size.width * 0.5;
 }
 
 -(void)initMe{
 	[[NSNotificationCenter defaultCenter] addObserver: self selector:   @selector(deviceOrientationDidChange:) name: UIDeviceOrientationDidChangeNotification object: nil];
-	[self initSegmentedControlWithIndentOf:self.frame.size.width * 0.5];
+	[self initSegmentedControlWithIndentOf:[self getSegmnetedControlIndentFromEachSide]];
 	[self layoutIfNeeded];
 }
 - (void)setHidden:(BOOL)hidden{
 	[super setHidden:hidden];
 	if(!hidden){
-		self.contentOffset = CGPointMake(segmentedControl.frame.size.width*0.5, 0);
+		[self animateScrollViewForSegmentedControler];
 	}
 	
 }
@@ -154,15 +175,20 @@
 			break;
 	}
 }
-
+-(void)animateScrollViewForSegmentedControler{
+	if(segmentedControl.selectedSegmentIndex != -1)
+		[self animateScrollViewForSelectedSegmentAtIndex:(int)segmentedControl.selectedSegmentIndex];
+	else{
+		CGFloat segmentWidth = segmentedControl.frame.size.width / segmentedControl.numberOfSegments;
+		[self setContentOffset: CGPointMake(segmentWidth*0.5 , 0) animated:true];
+		
+	}
+}
 -(void)animateScrollViewForSelectedSegmentAtIndex:(int)segmentIndex{
 	CGFloat segmentWidth = segmentedControl.frame.size.width / segmentedControl.numberOfSegments;
-	[UIView animateWithDuration:0.5 animations:^{
-		[self setContentOffset:CGPointMake(segmentWidth*segmentIndex + segmentWidth*0.5, 0)];
-		
-	} completion:^(BOOL finished) {
-		//some code
-	}];
+	
+	[self setContentOffset:CGPointMake(segmentWidth*segmentIndex + segmentWidth*0.5, 0) animated:YES];
+	
 	
 }
 
